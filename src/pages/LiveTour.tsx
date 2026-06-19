@@ -1,19 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import { Calendar, MapPin, Users, Clock, Mic, Play, ArrowRight, Sparkles } from 'lucide-react'
 
 const upcoming = [
-  { title: 'Solana AI Hackathon', date: 'Jul 18, 2026', spots: 300, duration: '3 days', price: 'Free', location: 'Virtual + NYC', speakers: '12+' },
+  { title: 'Solana AI Excavation', date: 'Jul 18, 2026', spots: 300, duration: '3 days', price: 'Free', location: 'Virtual + NYC', speakers: '12+' },
   { title: 'Breakpoint 2026', date: 'Sep 12, 2026', spots: 500, duration: '4 days', price: '$499', location: 'Singapore', speakers: '40+' },
-  { title: 'Solana DeFi Summit', date: 'Oct 5, 2026', spots: 150, duration: '2 days', price: '$199', location: 'London', speakers: '18+' },
-  { title: 'SVM Developer Workshop', date: 'Nov 8, 2026', spots: 80, duration: '1 day', price: '$99', location: 'Virtual', speakers: '6' },
-  { title: 'Jito Restaking Launch', date: 'Dec 3, 2026', spots: 200, duration: '1 day', price: 'Free', location: 'Virtual', speakers: '8' },
-  { title: 'Solana Mobile Summit', date: 'Jan 20, 2027', spots: 120, duration: '2 days', price: '$299', location: 'San Francisco', speakers: '15+' },
+  { title: 'Solana DeFi Fault Line Summit', date: 'Oct 5, 2026', spots: 150, duration: '2 days', price: '$199', location: 'London', speakers: '18+' },
+  { title: 'SVM Bedrock Workshop', date: 'Nov 8, 2026', spots: 80, duration: '1 day', price: '$99', location: 'Virtual', speakers: '6' },
+  { title: 'Jito Restaking Seam Launch', date: 'Dec 3, 2026', spots: 200, duration: '1 day', price: 'Free', location: 'Virtual', speakers: '8' },
+  { title: 'Solana Mobile Strata Summit', date: 'Jan 20, 2027', spots: 120, duration: '2 days', price: '$299', location: 'San Francisco', speakers: '15+' },
 ]
 
 const recorded = [
-  { title: 'Solana Agave Validator Call', date: 'Recorded', duration: '1 day', speakers: '4', views: '3.2k' },
-  { title: 'Jito Restaking Deep Dive', date: 'Recorded', duration: '2 days', speakers: '6', views: '5.7k' },
-  { title: 'Anchor v0.31 Launch Event', date: 'Recorded', duration: '3 hours', speakers: '3', views: '8.1k' },
-  { title: 'Solana x AI Panel Discussion', date: 'Recorded', duration: '2 hours', speakers: '5', views: '4.5k' },
+  { title: 'Solana Agave Validator Drill', date: 'Recorded', duration: '1 day', speakers: '4', views: '3.2k' },
+  { title: 'Jito Restaking Seam Survey', date: 'Recorded', duration: '2 days', speakers: '6', views: '5.7k' },
+  { title: 'Anchor v0.31 Strata Launch', date: 'Recorded', duration: '3 hours', speakers: '3', views: '8.1k' },
+  { title: 'Solana x AI Tectonic Panel', date: 'Recorded', duration: '2 hours', speakers: '5', views: '4.5k' },
 ]
 
 const speakers = [
@@ -24,6 +25,7 @@ const speakers = [
 ]
 
 export default function LiveTour() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-[#0a0a0a] pt-28 px-6 sm:px-14 relative">
       <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-white/3 blur-[150px] rounded-full pointer-events-none" />
@@ -31,8 +33,8 @@ export default function LiveTour() {
       <div className="max-w-6xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Live Events</h1>
-          <p className="text-white/50 text-base max-w-xl">The premier Solana conferences, hackathons, and workshops — live and on-chain. Join thousands of builders shaping the ecosystem.</p>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Expeditions</h1>
+          <p className="text-white/50 text-base max-w-xl">The premier Solana conferences, digs, and field workshops — live and on-chain. Join thousands of excavators shaping the formation.</p>
         </div>
 
         {/* Stats */}
@@ -66,7 +68,7 @@ export default function LiveTour() {
           </div>
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 sm:gap-6">
             <div className="flex-1">
-              <h3 className="text-white text-xl font-semibold mb-1">Solana AI Hackathon</h3>
+              <h3 className="text-white text-xl font-semibold mb-1">Solana AI Excavation</h3>
               <div className="flex flex-wrap gap-x-4 gap-y-1 text-white/50 text-sm">
                 <span className="flex items-center gap-1"><Calendar size={12} />Jul 18, 2026</span>
                 <span className="flex items-center gap-1"><MapPin size={12} />Virtual + NYC</span>
@@ -74,8 +76,8 @@ export default function LiveTour() {
               </div>
             </div>
             <div className="flex gap-3">
-              <button className="bg-[#e8702a] hover:bg-[#d2611f] text-white text-sm px-6 py-2.5 rounded-full transition-all">Register free</button>
-              <button className="bg-white/10 hover:bg-white/20 text-white text-sm px-5 py-2.5 rounded-full transition-all">Learn more</button>
+              <button onClick={() => navigate('/plans')} className="bg-[#e8702a] hover:bg-[#d2611f] text-white text-sm px-6 py-2.5 rounded-full transition-all">Register free</button>
+              <button onClick={() => navigate('/live-tour')} className="bg-white/10 hover:bg-white/20 text-white text-sm px-5 py-2.5 rounded-full transition-all">Learn more</button>
             </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ export default function LiveTour() {
                 </div>
                 <div className="flex items-center justify-between pt-3 border-t border-white/5">
                   <span className="text-white text-sm font-medium">{t.price}</span>
-                  <button className="text-xs bg-white/10 hover:bg-[#e8702a] text-white px-3 py-1.5 rounded-full transition-all">Register</button>
+                  <button onClick={() => navigate('/plans')} className="text-xs bg-white/10 hover:bg-[#e8702a] text-white px-3 py-1.5 rounded-full transition-all">Register</button>
                 </div>
               </div>
             ))}
@@ -116,7 +118,7 @@ export default function LiveTour() {
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.3s' }}>
           <div className="flex items-center justify-between mb-5">
             <span className="text-white/60 text-xs font-medium tracking-wide uppercase">Featured Speakers</span>
-            <button className="text-xs text-white/30 hover:text-white transition-colors flex items-center gap-1">View all <ArrowRight size={10} /></button>
+            <button onClick={() => navigate('/live-tour')} className="text-xs text-white/30 hover:text-white transition-colors flex items-center gap-1">View all <ArrowRight size={10} /></button>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
             {speakers.map((s, i) => (
@@ -155,7 +157,7 @@ export default function LiveTour() {
                   <span className="flex items-center gap-1"><Clock size={11} />{t.duration}</span>
                   <span className="flex items-center gap-1"><Mic size={11} />{t.speakers} speakers</span>
                 </div>
-                <button className="text-xs bg-white/10 hover:bg-white/20 text-white px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5">
+                <button onClick={() => navigate('/plans')} className="text-xs bg-white/10 hover:bg-white/20 text-white px-4 py-1.5 rounded-full transition-all flex items-center gap-1.5">
                   <Play size={10} /> Watch replay
                 </button>
               </div>

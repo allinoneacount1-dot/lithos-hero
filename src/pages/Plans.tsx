@@ -1,54 +1,59 @@
+import { useNavigate } from 'react-router-dom'
 import { Check, X, Star } from 'lucide-react'
 
 const tiers = [
   {
     name: 'Explorer',
+    depth: 'Surface',
     price: 'Free',
-    features: ['5 Solana protocol guides', 'Community forum access', 'Basic on-chain analytics', 'Mobile app', 'Email support'],
-    missing: ['Real-time validator API', 'AI agent sandbox', 'Custom RPC endpoints', 'Dedicated Geyser access', 'Multi-agent orchestration', 'Program audits'],
-    cta: 'Get started',
+    features: ['5 Solana protocol maps', 'Community dig site access', 'Basic on-chain surface scans', 'Mobile field kit', 'Email support'],
+    missing: ['Real-time validator seismograph', 'AI agent excavation rig', 'Custom RPC boreholes', 'Dedicated Geyser core access', 'Multi-agent survey team', 'Program fault audits'],
+    cta: 'Start digging',
   },
   {
     name: 'Validator',
+    depth: 'Mid-Crust',
     price: '29',
     period: 'SOL/mo',
-    features: ['Unlimited Solana guides', 'Real-time validator data API', 'AI agent sandbox', 'Priority support', 'Custom RPC endpoints', 'Advanced analytics dashboard', 'Webhook alerts'],
-    missing: ['Dedicated Geyser access', 'Multi-agent orchestration', 'Custom SVM program audits', 'On-site training'],
-    cta: 'Subscribe',
+    features: ['Unlimited Solana field maps', 'Real-time validator seismograph', 'AI agent excavation rig', 'Priority survey support', 'Custom RPC boreholes', 'Advanced analytics station', 'Seismic webhook alerts'],
+    missing: ['Dedicated Geyser core access', 'Multi-agent survey team', 'Custom SVM formation audits', 'On-site expedition training'],
+    cta: 'Dig deeper',
     featured: true,
   },
   {
     name: 'Institution',
+    depth: 'Bedrock',
     price: '99',
     period: 'SOL/mo',
-    features: ['All Validator features', 'Dedicated Geyser access', 'Multi-agent orchestration', 'Custom SVM program audits', 'SLA guarantee', 'On-site training', 'Dedicated account manager', 'Custom integrations'],
+    features: ['All Validator gear', 'Dedicated Geyser core access', 'Multi-agent survey team', 'Custom SVM formation audits', 'SLA bedrock guarantee', 'On-site expedition training', 'Dedicated expedition lead', 'Custom instrument integration'],
     missing: [],
-    cta: 'Contact sales',
+    cta: 'Contact base camp',
   },
 ]
 
 const faqs = [
-  { q: 'Can I pay with SOL or USDC?', a: 'Yes, we accept SOL and USDC (native and SPL). Payments are processed on-chain with instant plan activation.' },
-  { q: 'Is there a discount for Solana builders?', a: 'Yes, verified Solana builders and grant recipients get 40% off. Reach out with your project details.' },
-  { q: 'Do you support devnet/testnet?', a: 'All our APIs and RPC endpoints support mainnet-beta, devnet, and testnet. Switch networks in your dashboard.' },
-  { q: 'Can I upgrade mid-cycle?', a: 'Yes, upgrades take effect immediately. We prorate the remaining balance on your current plan.' },
-  { q: 'What happens if I exceed API limits?', a: 'We notify you at 80% usage. Validator plans have soft limits; Institution plans are unlimited.' },
+  { q: 'Can I pay with SOL or USDC?', a: 'Every vein accepts SOL and USDC (native and SPL). Payments are processed on-chain — your depth tier activates the moment the transaction settles.' },
+  { q: 'Is there a discount for bedrock builders?', a: 'Verified Solana builders and grant recipients dig at 40% off. Send your project core sample to base camp.' },
+  { q: 'Do you support devnet / testnet?', a: 'All our instruments work on mainnet-beta, devnet, and testnet. Switch your survey site from the dashboard.' },
+  { q: 'Can I upgrade mid-expedition?', a: 'Yes, upgrades take effect at the next block. We prorate your remaining claim.' },
+  { q: 'What happens if I hit the mineral limit?', a: 'We signal at 80% extraction. Validator plans have soft caps; Bedrock tiers are seam-less.' },
 ]
 
 const testimonials = [
-  { name: 'Alex Chen', role: 'Lead Developer, Marginfi', text: 'Lithos gave our team the fastest path to production on Solana. The Anchor guide alone saved us weeks of trial and error.' },
-  { name: 'Sarah Park', role: 'Protocol Engineer, Jito', text: 'The validator operations course is essential reading for anyone running Solana infrastructure. Updated and accurate.' },
+  { name: 'Alex Chen', role: 'Lead Developer, Marginfi', text: 'Lithos gave our team the fastest path to Solana\'s bedrock. The Anchor stratum alone saved us weeks of digging in the dark.' },
+  { name: 'Sarah Park', role: 'Protocol Engineer, Jito', text: 'The validator seismology field notes are essential reading for anyone drilling into Solana infrastructure. Every layer, precisely mapped.' },
 ]
 
 export default function Plans() {
+  const navigate = useNavigate()
   return (
     <div className="min-h-screen bg-[#0a0a0a] pt-28 px-6 sm:px-14 relative">
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[700px] bg-[#e8702a]/3 blur-[180px] rounded-full pointer-events-none" />
       <div className="max-w-6xl mx-auto relative">
         <div className="mb-12 text-center hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5 mx-auto" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Plans</h1>
-          <p className="text-white/50 text-base max-w-md mx-auto">From solo explorers to institutional validators — scale your Solana AI infrastructure with confidence.</p>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Depths</h1>
+          <p className="text-white/50 text-base max-w-md mx-auto">From surface collectors to bedrock excavators — choose your depth and unearth the full Solana AI formation.</p>
         </div>
 
         {/* Pricing Tiers */}
@@ -83,6 +88,7 @@ export default function Plans() {
                 ))}
               </ul>
               <button
+                onClick={() => navigate('/plans')}
                 className={`w-full text-sm font-medium py-2.5 rounded-full transition-all ${
                   tier.featured
                     ? 'bg-[#e8702a] text-white hover:bg-[#d2611f] shadow-md shadow-[#e8702a]/20'
