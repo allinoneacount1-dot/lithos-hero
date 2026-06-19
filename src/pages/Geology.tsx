@@ -1,11 +1,11 @@
 export default function Geology() {
   const topics = [
-    { title: 'Plate Tectonics', desc: 'The unifying theory of geology — from ridge push to slab pull, explore how Earth\'s lithosphere evolves.', icon: '🌍', articles: '48' },
-    { title: 'Mineralogy', desc: 'Crystal systems, bond chemistry, and optical properties that distinguish the 5,000+ known mineral species.', icon: '💎', articles: '36' },
-    { title: 'Paleontology', desc: 'Fossil preservation, index taxa, and the geologic time scale built from extinction events.', icon: '🦴', articles: '42' },
-    { title: 'Volcanology', desc: 'Magma genesis, eruption dynamics, and hazard assessment across arc, rift, and hot-spot settings.', icon: '🌋', articles: '29' },
-    { title: 'Hydrogeology', desc: 'Groundwater flow through porous and fractured media, aquifer characterization, and contamination transport.', icon: '💧', articles: '31' },
-    { title: 'Economic Geology', desc: 'Ore deposit models, from porphyry copper to unconformity-related uranium, and exploration targeting.', icon: '⛏️', articles: '27' },
+    { title: 'Layer 1 Protocols', desc: 'Consensus mechanisms, validator economics, and the trade-offs between security, scalability, and decentralization.', icon: '⛓️', articles: '56' },
+    { title: 'AI Model Markets', desc: 'Tokenized neural networks, decentralized inference, and the emergence of compute-backed asset classes.', icon: '🧠', articles: '41' },
+    { title: 'MEV & Auction Theory', desc: 'Miner extractable value, PBS, MEV-share, and the game-theoretic landscape of block building.', icon: '⚡', articles: '33' },
+    { title: 'Zero-Knowledge Cryptography', desc: 'Groth16, PLONK, Nova. Recursive proofs, aggregation, and the path toward full-chain privacy.', icon: '🔐', articles: '47' },
+    { title: 'Tokenomics Design', desc: 'Supply schedules, bonding curves, veToken models, and incentive alignment for sustainable cryptonetworks.', icon: '📊', articles: '38' },
+    { title: 'Decentralized Governance', desc: 'DAO structures, quadratic voting, conviction voting, and the political economy of on-chain decision-making.', icon: '🏛️', articles: '29' },
   ]
 
   return (
@@ -14,8 +14,8 @@ export default function Geology() {
       <div className="max-w-5xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Geology</h1>
-          <p className="text-white/50 text-base max-w-xl">The science that reads Earth's memory — a window into 4.5 billion years of planetary evolution.</p>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Crypto AI</h1>
+          <p className="text-white/50 text-base max-w-xl">The foundational primitives of cryptoeconomic systems and machine intelligence — from consensus layers to autonomous agents.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {topics.map((t, i) => (

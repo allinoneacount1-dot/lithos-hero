@@ -2,32 +2,32 @@ import { Check } from 'lucide-react'
 
 const tiers = [
   {
-    name: 'Prospector',
+    name: 'Explorer',
     price: 'Free',
-    features: ['5 field guides', 'Basic geologic maps', 'Community forum', 'Mobile access'],
+    features: ['5 protocol guides', 'Community forum access', 'Basic on-chain analytics', 'Mobile app'],
     cta: 'Get started',
   },
   {
-    name: 'Geologist',
-    price: '$19',
+    name: 'Builder',
+    price: '$29',
     period: '/mo',
-    features: ['Unlimited field guides', 'High-res seismic data', 'AI-assisted core logging', 'Export to GIS formats', 'Priority support'],
+    features: ['Unlimited protocol guides', 'Real-time on-chain data API', 'AI agent sandbox', 'Priority support', 'Custom alerts'],
     cta: 'Subscribe',
     featured: true,
   },
   {
-    name: 'Researcher',
-    price: '$49',
+    name: 'Validator',
+    price: '$99',
     period: '/mo',
-    features: ['All Geologist features', 'Full subsurface API', 'Multi-user collaboration', 'Custom model training', 'Dedicated account manager', 'SLA guarantee'],
+    features: ['All Builder features', 'Full node RPC access', 'Multi-agent orchestration', 'Custom model fine-tuning', 'Dedicated infrastructure', '99.9% SLA'],
     cta: 'Contact sales',
   },
 ]
 
 const faqs = [
-  { q: 'Can I switch plans anytime?', a: 'Yes, upgrade or downgrade at any time. Changes take effect immediately.' },
-  { q: 'Is there a student discount?', a: 'We offer 50% off for verified students and academic institutions.' },
-  { q: 'What payment methods do you accept?', a: 'All major credit cards, crypto (ETH, USDC), and bank transfers for annual plans.' },
+  { q: 'Can I pay with crypto?', a: 'Yes, we accept ETH, USDC, SOL, and BTC. Payments are processed on-chain with instant plan activation.' },
+  { q: 'Is there a discount for teams?', a: 'Yes, team plans start at 5 seats with a 30% discount. Enterprise pricing is available for 20+ seats.' },
+  { q: 'What chains do you support?', a: 'Ethereum, Solana, Polygon, Arbitrum, Optimism, Base, and Avalanche. More chains are added monthly.' },
 ]
 
 export default function Plans() {
@@ -38,7 +38,7 @@ export default function Plans() {
         <div className="mb-12 text-center hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5 mx-auto" />
           <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Plans</h1>
-          <p className="text-white/50 text-base max-w-md mx-auto">Scale your geological toolkit — from solo prospecting to enterprise-grade subsurface intelligence.</p>
+          <p className="text-white/50 text-base max-w-md mx-auto">From solo explorers to institutional validators — scale your crypto AI infrastructure with confidence.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-6 items-start mb-16">
           {tiers.map((tier, i) => (

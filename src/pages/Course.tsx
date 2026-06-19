@@ -6,17 +6,17 @@ export default function Course() {
       <div className="max-w-4xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Geology Courses</h1>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Crypto AI Courses</h1>
           <p className="text-white/50 text-base leading-relaxed max-w-2xl">
-            Explore our curated curriculum — from sedimentary petrology to seismic interpretation. Each course blends field theory with digital twin simulations.
+            Master the intersection of blockchain and artificial intelligence — from writing smart contracts to deploying autonomous trading agents on-chain.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 gap-5">
           {[
-            { title: 'Sedimentology & Stratigraphy', desc: 'Understand layer formation, facies analysis, and basin evolution through hands-on core logging.', hours: '24h', students: '1.2k' },
-            { title: 'Structural Geology', desc: 'Map folds, faults, and fractures. Learn cross-section balancing and 3D kinematic modeling.', hours: '18h', students: '980' },
-            { title: 'Geophysical Prospecting', desc: 'Seismic, magnetics, and resistivity surveys. Process real field data from volcanic terrains.', hours: '30h', students: '720' },
-            { title: 'Geochemistry', desc: 'Trace element and isotope geochemistry for provenance studies and hydrothermal exploration.', hours: '20h', students: '640' },
+            { title: 'Smart Contract Development', desc: 'Solidity, Vyper, and Rust for WASM. Write, test, and deploy secure contracts on EVM and SVM chains.', hours: '32h', students: '2.8k' },
+            { title: 'AI Trading Agents', desc: 'Build reinforcement learning agents that execute strategies across CEX and DEX venues using real-time on-chain data.', hours: '28h', students: '1.9k' },
+            { title: 'DeFi Protocol Engineering', desc: 'Design lending pools, AMMs, and liquid staking. Understand MEV resistance, oracles, and risk parameters.', hours: '36h', students: '1.4k' },
+            { title: 'Zero-Knowledge ML', desc: 'ZK-SNARKs, zk-STARKs, and homomorphic encryption for privacy-preserving inference on decentralized networks.', hours: '24h', students: '870' },
           ].map((c, i) => (
             <div
               key={i}
