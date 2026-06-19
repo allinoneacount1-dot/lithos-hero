@@ -41,27 +41,33 @@ export default function Home() {
         className="absolute inset-0 bg-center bg-cover bg-no-repeat z-10 hero-zoom"
         style={{ backgroundImage: `url(${BG_IMAGE_1})` }}
       />
+      <div className="absolute inset-0 z-20 bg-gradient-to-t from-black/60 via-transparent to-black/30" />
+      <div className="absolute inset-0 z-20 bg-gradient-to-r from-black/20 via-transparent to-black/20" />
 
       <RevealLayer image={BG_IMAGE_2} cursorX={cursorPos.x} cursorY={cursorPos.y} />
 
       <div className="absolute top-[14%] left-0 right-0 flex flex-col items-center text-center px-5 pointer-events-none z-50">
-        <h1 className="text-white leading-[0.95]">
-          <span
-            className="block font-playfair italic font-normal text-5xl sm:text-7xl md:text-8xl hero-anim hero-reveal"
-            style={{ letterSpacing: '-0.05em', animationDelay: '0.25s' }}
-          >
-            Layers hold
-          </span>
-          <span
-            className="block font-normal text-5xl sm:text-7xl md:text-8xl -mt-1 hero-anim hero-reveal"
-            style={{ letterSpacing: '-0.08em', animationDelay: '0.42s' }}
-          >
-            tales of time
-          </span>
-        </h1>
+        <div className="relative">
+          <div className="absolute -inset-20 bg-[#e8702a]/5 blur-[120px] rounded-full" />
+          <h1 className="text-white leading-[0.95] relative">
+            <span
+              className="block font-playfair italic font-normal text-5xl sm:text-7xl md:text-8xl hero-anim hero-reveal"
+              style={{ letterSpacing: '-0.05em', animationDelay: '0.25s' }}
+            >
+              Layers hold
+            </span>
+            <span
+              className="block font-normal text-5xl sm:text-7xl md:text-8xl -mt-1 hero-anim hero-reveal"
+              style={{ letterSpacing: '-0.08em', animationDelay: '0.42s' }}
+            >
+              tales of time
+            </span>
+          </h1>
+        </div>
       </div>
 
       <div className="hidden sm:block absolute bottom-14 left-10 md:left-14 max-w-[260px] z-50 hero-anim hero-fade" style={{ animationDelay: '0.7s' }}>
+        <div className="w-8 h-px bg-[#e8702a]/60 mb-4" />
         <p className="text-sm text-white/80 leading-relaxed">
           Every layer of sediment records a chapter of our planet, from ancient seabeds to drifting ash, layered across millions of years beneath us.
         </p>
@@ -71,6 +77,7 @@ export default function Home() {
         className="absolute bottom-10 sm:bottom-24 left-5 right-5 sm:left-auto sm:right-10 md:right-14 max-w-full sm:max-w-[260px] flex flex-col items-start gap-4 sm:gap-5 z-50 hero-anim hero-fade"
         style={{ animationDelay: '0.85s' }}
       >
+        <div className="w-8 h-px bg-[#e8702a]/60 mb-1" />
         <p className="text-xs sm:text-sm text-white/80 leading-relaxed">
           Our interactive maps let you peel back the crust to trace how stones, fossils, and deep time combine to shape the ground beneath your feet.
         </p>
@@ -80,6 +87,12 @@ export default function Home() {
         >
           Start Digging
         </button>
+      </div>
+
+      <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-50 hero-anim hero-fade" style={{ animationDelay: '1.2s' }}>
+        <div className="w-5 h-8 rounded-full border border-white/20 flex items-start justify-center p-1.5">
+          <div className="w-1 h-2 bg-white/60 rounded-full animate-bounce" />
+        </div>
       </div>
     </section>
   )
