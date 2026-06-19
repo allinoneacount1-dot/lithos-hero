@@ -1,11 +1,11 @@
 export default function LiveTour() {
   const tours = [
-    { title: 'ETHGlobal AI Hackathon', date: 'Jul 18, 2026', status: 'Upcoming', spots: 200, duration: '3 days', price: 'Free' },
-    { title: 'zkML Summit Istanbul', date: 'Aug 5, 2026', status: 'Upcoming', spots: 150, duration: '2 days', price: '$299' },
-    { title: 'DeFi x AI Workshop', date: 'Sep 12, 2026', status: 'Upcoming', spots: 80, duration: '1 day', price: '$149' },
-    { title: 'Solana Agentic Day', date: 'Oct 3, 2026', status: 'Upcoming', spots: 120, duration: '2 days', price: '$199' },
-    { title: 'On-Chain Data Summit', date: 'Recorded', status: 'Available', spots: null, duration: '2 days', price: 'Free' },
-    { title: 'Tokenomics Design Sprint', date: 'Recorded', status: 'Available', spots: null, duration: '4 days', price: 'Free' },
+    { title: 'Solana AI Hackathon', date: 'Jul 18, 2026', status: 'Upcoming', spots: 300, duration: '3 days', price: 'Free' },
+    { title: 'Breakpoint 2026', date: 'Sep 12, 2026', status: 'Upcoming', spots: 500, duration: '4 days', price: '$499' },
+    { title: 'Solana DeFi Summit', date: 'Oct 5, 2026', status: 'Upcoming', spots: 150, duration: '2 days', price: '$199' },
+    { title: 'SVM Developer Workshop', date: 'Nov 8, 2026', status: 'Upcoming', spots: 80, duration: '1 day', price: '$99' },
+    { title: 'Solana Agave Validator Call', date: 'Recorded', status: 'Available', spots: null, duration: '1 day', price: 'Free' },
+    { title: 'Jito Restaking Deep Dive', date: 'Recorded', status: 'Available', spots: null, duration: '2 days', price: 'Free' },
   ]
 
   return (
@@ -16,7 +16,7 @@ export default function LiveTour() {
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
           <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Live Events</h1>
-          <p className="text-white/50 text-base max-w-xl">Join the leading conferences, hackathons, and workshops at the frontier of crypto AI — live and on-chain.</p>
+          <p className="text-white/50 text-base max-w-xl">The premier Solana conferences, hackathons, and workshops — live and on-chain. Join thousands of builders shaping the ecosystem.</p>
         </div>
 
         <div className="mb-6">

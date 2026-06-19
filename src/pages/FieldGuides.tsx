@@ -1,11 +1,11 @@
 export default function FieldGuides() {
   const guides = [
-    { title: 'Ethereum Protocol Guild', protocol: 'EIP-4844 & Blobs', pages: 64, difficulty: 'Advanced', downloads: '12k' },
-    { title: 'Solana SVM Deep Dive', protocol: 'Sealevel Runtime', pages: 48, difficulty: 'Intermediate', downloads: '9.4k' },
-    { title: 'AI Oracles & Data Feeds', protocol: 'Chainlink CCIP', pages: 36, difficulty: 'Beginner', downloads: '18k' },
-    { title: 'zkEVM Circuit Design', protocol: 'Polygon zkEVM', pages: 52, difficulty: 'Advanced', downloads: '6.2k' },
-    { title: 'DeFi Risk Framework', protocol: 'Gauntlet & Chaos Labs', pages: 40, difficulty: 'Intermediate', downloads: '7.8k' },
-    { title: 'On-Chain ML Inference', protocol: 'Giza & Modulus Labs', pages: 32, difficulty: 'Beginner', downloads: '4.1k' },
+    { title: 'Solana Validator Setup', protocol: 'Jito-Solana', pages: 52, difficulty: 'Advanced', downloads: '8.2k' },
+    { title: 'Anchor Framework Deep Dive', protocol: 'Anchor Lang', pages: 44, difficulty: 'Intermediate', downloads: '14k' },
+    { title: 'Token Extensions Guide', protocol: 'Token 2022', pages: 38, difficulty: 'Beginner', downloads: '11k' },
+    { title: 'SVM Runtime Internals', protocol: 'Sealevel', pages: 56, difficulty: 'Advanced', downloads: '5.4k' },
+    { title: 'Solana DeFi Risk Matrix', protocol: 'Marginfi & Kamino', pages: 32, difficulty: 'Intermediate', downloads: '6.7k' },
+    { title: 'On-Chain AI Inference', protocol: 'Giza & Render Network', pages: 28, difficulty: 'Beginner', downloads: '3.9k' },
   ]
 
   return (
@@ -14,8 +14,8 @@ export default function FieldGuides() {
       <div className="max-w-5xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Protocol Guides</h1>
-          <p className="text-white/50 text-base max-w-xl">Deep-dive technical guides covering the architecture, security, and economic design of major crypto AI protocols.</p>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Solana Guides</h1>
+          <p className="text-white/50 text-base max-w-xl">Technical deep-dives into Solana's core protocols — from validator operations to SVM program architecture and on-chain AI.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {guides.map((g, i) => (

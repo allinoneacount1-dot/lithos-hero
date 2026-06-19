@@ -4,6 +4,7 @@ import { BrowserRouter } from 'react-router-dom'
 import { WagmiProvider } from 'wagmi'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { config } from './wagmi'
+import { SolanaProvider } from './solana'
 import './index.css'
 import App from './App.tsx'
 
@@ -13,9 +14,11 @@ createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <WagmiProvider config={config}>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <SolanaProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </SolanaProvider>
       </QueryClientProvider>
     </WagmiProvider>
   </StrictMode>,

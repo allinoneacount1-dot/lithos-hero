@@ -1,11 +1,11 @@
 export default function Geology() {
   const topics = [
-    { title: 'Layer 1 Protocols', desc: 'Consensus mechanisms, validator economics, and the trade-offs between security, scalability, and decentralization.', icon: '⛓️', articles: '56' },
-    { title: 'AI Model Markets', desc: 'Tokenized neural networks, decentralized inference, and the emergence of compute-backed asset classes.', icon: '🧠', articles: '41' },
-    { title: 'MEV & Auction Theory', desc: 'Miner extractable value, PBS, MEV-share, and the game-theoretic landscape of block building.', icon: '⚡', articles: '33' },
-    { title: 'Zero-Knowledge Cryptography', desc: 'Groth16, PLONK, Nova. Recursive proofs, aggregation, and the path toward full-chain privacy.', icon: '🔐', articles: '47' },
-    { title: 'Tokenomics Design', desc: 'Supply schedules, bonding curves, veToken models, and incentive alignment for sustainable cryptonetworks.', icon: '📊', articles: '38' },
-    { title: 'Decentralized Governance', desc: 'DAO structures, quadratic voting, conviction voting, and the political economy of on-chain decision-making.', icon: '🏛️', articles: '29' },
+    { title: 'Solana Architecture', desc: 'Sealevel runtime, Gulf Stream, Turbine block propagation, and the key innovations behind 400ms block times.', icon: '⚡', articles: '44' },
+    { title: 'AI x Solana', desc: 'On-chain inference, agent frameworks, compute markets — how Solana is becoming the execution layer for autonomous AI.', icon: '🤖', articles: '37' },
+    { title: 'DeFi on Solana', desc: 'Marginfi, Kamino, Meteora, Jupiter. The lending, leverage, and liquidity primitives reshaping permissionless finance.', icon: '🏦', articles: '52' },
+    { title: 'NFTs & Digital Assets', desc: 'Token Extensions, compressed NFTs, Metaplex Inscriptions, and the future of digital ownership on Solana.', icon: '🖼️', articles: '41' },
+    { title: 'Solana Security', desc: 'Fuzz testing Anchor programs, access control patterns, oracle manipulation, and common SVM vulnerability classes.', icon: '🛡️', articles: '29' },
+    { title: 'Validator Economics', desc: 'Staking, MEV, Jito bundles, tip distribution, and the incentive layer securing Solana\'s validator set.', icon: '⛏️', articles: '33' },
   ]
 
   return (
@@ -14,8 +14,8 @@ export default function Geology() {
       <div className="max-w-5xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Crypto AI</h1>
-          <p className="text-white/50 text-base max-w-xl">The foundational primitives of cryptoeconomic systems and machine intelligence — from consensus layers to autonomous agents.</p>
+          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Solana</h1>
+          <p className="text-white/50 text-base max-w-xl">The high-performance blockchain powering the next generation of crypto AI — from sub-second settlement to autonomous on-chain agents.</p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {topics.map((t, i) => (

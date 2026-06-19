@@ -4,30 +4,30 @@ const tiers = [
   {
     name: 'Explorer',
     price: 'Free',
-    features: ['5 protocol guides', 'Community forum access', 'Basic on-chain analytics', 'Mobile app'],
+    features: ['5 Solana protocol guides', 'Community forum access', 'Basic on-chain analytics', 'Mobile app'],
     cta: 'Get started',
   },
   {
-    name: 'Builder',
-    price: '$29',
-    period: '/mo',
-    features: ['Unlimited protocol guides', 'Real-time on-chain data API', 'AI agent sandbox', 'Priority support', 'Custom alerts'],
+    name: 'Validator',
+    price: '29',
+    period: 'SOL/mo',
+    features: ['Unlimited Solana guides', 'Real-time validator data API', 'AI agent sandbox', 'Priority support', 'Custom RPC endpoints'],
     cta: 'Subscribe',
     featured: true,
   },
   {
-    name: 'Validator',
-    price: '$99',
-    period: '/mo',
-    features: ['All Builder features', 'Full node RPC access', 'Multi-agent orchestration', 'Custom model fine-tuning', 'Dedicated infrastructure', '99.9% SLA'],
+    name: 'Institution',
+    price: '99',
+    period: 'SOL/mo',
+    features: ['All Validator features', 'Dedicated Geyser access', 'Multi-agent orchestration', 'Custom SVM program audits', 'SLA guarantee', 'On-site training'],
     cta: 'Contact sales',
   },
 ]
 
 const faqs = [
-  { q: 'Can I pay with crypto?', a: 'Yes, we accept ETH, USDC, SOL, and BTC. Payments are processed on-chain with instant plan activation.' },
-  { q: 'Is there a discount for teams?', a: 'Yes, team plans start at 5 seats with a 30% discount. Enterprise pricing is available for 20+ seats.' },
-  { q: 'What chains do you support?', a: 'Ethereum, Solana, Polygon, Arbitrum, Optimism, Base, and Avalanche. More chains are added monthly.' },
+  { q: 'Can I pay with SOL or USDC?', a: 'Yes, we accept SOL and USDC (native and SPL). Payments are processed on-chain with instant plan activation.' },
+  { q: 'Is there a discount for Solana builders?', a: 'Yes, verified Solana builders and grant recipients get 40% off. Reach out with your project details.' },
+  { q: 'Do you support devnet/testnet?', a: 'All our APIs and RPC endpoints support mainnet-beta, devnet, and testnet. Switch networks in your dashboard.' },
 ]
 
 export default function Plans() {
@@ -38,7 +38,7 @@ export default function Plans() {
         <div className="mb-12 text-center hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5 mx-auto" />
           <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Plans</h1>
-          <p className="text-white/50 text-base max-w-md mx-auto">From solo explorers to institutional validators — scale your crypto AI infrastructure with confidence.</p>
+          <p className="text-white/50 text-base max-w-md mx-auto">From solo explorers to institutional validators — scale your Solana AI infrastructure with confidence.</p>
         </div>
         <div className="grid sm:grid-cols-3 gap-6 items-start mb-16">
           {tiers.map((tier, i) => (

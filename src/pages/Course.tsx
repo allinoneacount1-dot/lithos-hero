@@ -6,17 +6,20 @@ export default function Course() {
       <div className="max-w-4xl mx-auto relative">
         <div className="mb-12 hero-anim hero-fade" style={{ animationDelay: '0.1s' }}>
           <div className="w-10 h-px bg-[#e8702a]/60 mb-5" />
-          <h1 className="text-white text-5xl sm:text-6xl font-playfair italic mb-3">Crypto AI Courses</h1>
+          <div className="flex items-center gap-3 mb-3">
+            <h1 className="text-white text-5xl sm:text-6xl font-playfair italic">Solana Courses</h1>
+            <span className="bg-[#e8702a]/10 text-[#e8702a] text-xs font-mono px-2 py-0.5 rounded-full">SOL</span>
+          </div>
           <p className="text-white/50 text-base leading-relaxed max-w-2xl">
-            Master the intersection of blockchain and artificial intelligence — from writing smart contracts to deploying autonomous trading agents on-chain.
+            Build on the fastest blockchain in crypto. Master Solana development — from Sealevel runtime to SVM deployments, AI agents, and DeFi protocols.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 gap-5">
           {[
-            { title: 'Smart Contract Development', desc: 'Solidity, Vyper, and Rust for WASM. Write, test, and deploy secure contracts on EVM and SVM chains.', hours: '32h', students: '2.8k' },
-            { title: 'AI Trading Agents', desc: 'Build reinforcement learning agents that execute strategies across CEX and DEX venues using real-time on-chain data.', hours: '28h', students: '1.9k' },
-            { title: 'DeFi Protocol Engineering', desc: 'Design lending pools, AMMs, and liquid staking. Understand MEV resistance, oracles, and risk parameters.', hours: '36h', students: '1.4k' },
-            { title: 'Zero-Knowledge ML', desc: 'ZK-SNARKs, zk-STARKs, and homomorphic encryption for privacy-preserving inference on decentralized networks.', hours: '24h', students: '870' },
+            { title: 'Solana Smart Contracts', desc: 'Anchor framework, Rust for BPF, CPI calls, PDA derivation. Ship production-grade programs on mainnet.', hours: '32h', students: '3.1k' },
+            { title: 'AI Agents on Solana', desc: 'Deploy autonomous agents that trade, arbitrage, and manage positions using Solana\'s sub-second finality.', hours: '28h', students: '1.8k' },
+            { title: 'DeFi Protocol Design', desc: 'Build lending pools, AMMs, and liquid staking on Solana. Understand SVM, epoch scheduling, and rent economics.', hours: '36h', students: '2.2k' },
+            { title: 'Solana Data & Indexing', desc: 'Parse transactions, build dashboards with Geyser plugins, and stream on-chain data using Yellowstone gRPC.', hours: '20h', students: '940' },
           ].map((c, i) => (
             <div
               key={i}
