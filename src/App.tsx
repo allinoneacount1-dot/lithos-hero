@@ -310,14 +310,16 @@ function App() {
 
       <ConnectWalletModal open={walletOpen} onClose={() => setWalletOpen(false)} onSelectSolana={handleSolanaSelect} />
 
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/course" element={<Course />} />
-        <Route path="/field-guides" element={<FieldGuides />} />
-        <Route path="/geology" element={<Geology />} />
-        <Route path="/plans" element={<Plans />} />
-        <Route path="/live-tour" element={<LiveTour />} />
-      </Routes>
+      <div key={location.pathname} className="hero-page-enter">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/course" element={<Course />} />
+          <Route path="/field-guides" element={<FieldGuides />} />
+          <Route path="/geology" element={<Geology />} />
+          <Route path="/plans" element={<Plans />} />
+          <Route path="/live-tour" element={<LiveTour />} />
+        </Routes>
+      </div>
     </div>
   )
 }
