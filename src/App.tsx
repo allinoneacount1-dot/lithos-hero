@@ -1,15 +1,74 @@
 import { useRef, useState, useEffect, useCallback } from 'react'
-import { Menu } from 'lucide-react'
+import { Menu, Wallet, X } from 'lucide-react'
 import RevealLayer from './components/RevealLayer'
 
 const BG_IMAGE_1 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_195923_b0ba8ace-1d1d-4f2c-9a28-1ab84b330680.png&w=1280&q=85'
 const BG_IMAGE_2 = 'https://images.higgs.ai/?default=1&output=webp&url=https%3A%2F%2Fd8j0ntlcm91z4.cloudfront.net%2Fuser_38xzZboKViGWJOttwIXH07lWA1P%2Fhf_20260609_201152_bba90a12-bf12-459f-91f0-51f237dbaf3b.png&w=1280&q=85'
+
+const wallets = [
+  { id: 'metamask', name: 'MetaMask', icon: '🦊', desc: 'Connect to your MetaMask wallet' },
+  { id: 'walletconnect', name: 'WalletConnect', icon: '🔗', desc: 'Scan with WalletConnect' },
+  { id: 'coinbase', name: 'Coinbase Wallet', icon: '🔵', desc: 'Connect to Coinbase Wallet' },
+  { id: 'phantom', name: 'Phantom', icon: '👻', desc: 'Connect to Phantom wallet' },
+]
+
+function ConnectWalletModal({ open, onClose, onConnect }: {
+  open: boolean
+  onClose: () => void
+  onConnect: (id: string) => void
+}) {
+  useEffect(() => {
+    if (!open) return
+    const handler = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', handler)
+    return () => window.removeEventListener('keydown', handler)
+  }, [open, onClose])
+
+  if (!open) return null
+
+  return (
+    <div className="fixed inset-0 z-[200] flex items-center justify-center p-4">
+      <div className="absolute inset-0 bg-black/60 backdrop-blur-sm" onClick={onClose} />
+      <div className="relative w-full max-w-sm bg-[#111] border border-white/10 rounded-2xl p-6 shadow-2xl">
+        <div className="flex items-center justify-between mb-6">
+          <div className="flex items-center gap-2">
+            <Wallet size={20} className="text-[#e8702a]" />
+            <span className="text-white text-lg font-semibold">Connect Wallet</span>
+          </div>
+          <button onClick={onClose} className="text-white/50 hover:text-white transition-colors">
+            <X size={20} />
+          </button>
+        </div>
+        <div className="flex flex-col gap-3">
+          {wallets.map((w) => (
+            <button
+              key={w.id}
+              onClick={() => { onConnect(w.id); onClose() }}
+              className="flex items-center gap-4 w-full bg-white/5 hover:bg-white/10 border border-white/10 hover:border-[#e8702a]/40 rounded-xl px-4 py-3.5 transition-all group"
+            >
+              <span className="text-2xl">{w.icon}</span>
+              <div className="text-left flex-1">
+                <div className="text-white text-sm font-medium group-hover:text-[#e8702a] transition-colors">{w.name}</div>
+                <div className="text-white/40 text-xs">{w.desc}</div>
+              </div>
+            </button>
+          ))}
+        </div>
+        <p className="mt-5 text-center text-xs text-white/30">
+          By connecting, you agree to our Terms of Service.
+        </p>
+      </div>
+    </div>
+  )
+}
 
 function App() {
   const mouse = useRef({ x: -999, y: -999 })
   const smooth = useRef({ x: -999, y: -999 })
   const rafRef = useRef<number>(0)
   const [cursorPos, setCursorPos] = useState({ x: -999, y: -999 })
+  const [walletOpen, setWalletOpen] = useState(false)
+  const [walletAddr, setWalletAddr] = useState<string | null>(null)
 
   const handleMouseMove = useCallback((e: MouseEvent) => {
     mouse.current.x = e.clientX
@@ -34,6 +93,11 @@ function App() {
     }
   }, [handleMouseMove])
 
+  const handleConnect = useCallback((id: string) => {
+    const short = `${id.slice(0, 2)}...${id.slice(-4)}`
+    setWalletAddr(`${id.charAt(0).toUpperCase() + id.slice(1)} • ${short}`)
+  }, [])
+
   return (
     <div
       className="min-h-screen bg-white tracking-[-0.02em]"
@@ -55,14 +119,27 @@ function App() {
           <button className="px-4 py-1.5 rounded-full text-sm font-medium text-white/80 hover:bg-white/20 hover:text-white transition-colors">Live Tour</button>
         </div>
 
-        <div className="hidden md:block bg-white text-gray-900 text-sm font-semibold px-6 py-2.5 rounded-full hover:bg-gray-100 cursor-pointer">
-          Sign Up
-        </div>
+        {walletAddr ? (
+          <div className="hidden md:flex items-center gap-2 bg-white/10 backdrop-blur-md border border-white/20 text-white text-sm font-medium px-4 py-2 rounded-full">
+            <Wallet size={16} className="text-[#e8702a]" />
+            {walletAddr}
+          </div>
+        ) : (
+          <button
+            onClick={() => setWalletOpen(true)}
+            className="hidden md:flex items-center gap-2 bg-white text-gray-900 text-sm font-semibold px-5 py-2.5 rounded-full hover:bg-gray-100 transition-all cursor-pointer"
+          >
+            <Wallet size={16} />
+            Connect Wallet
+          </button>
+        )}
 
-        <button className="md:hidden text-white">
+        <button className="md:hidden text-white" onClick={() => setWalletOpen(true)}>
           <Menu size={26} />
         </button>
       </nav>
+
+      <ConnectWalletModal open={walletOpen} onClose={() => setWalletOpen(false)} onConnect={handleConnect} />
 
       <section className="relative w-full overflow-hidden h-screen bg-black" style={{ height: '100dvh' }}>
         <div
